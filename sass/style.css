@@ -1,0 +1,464 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Noto Sans JP", MyYuGothicM, YuGothic, -apple-system, BlinkMacSystemFont, "Hiragino kaku Gothic ProN", Meiryo, Verdana, arial, helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.l-header {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+}
+@media (min-width: 960px) {
+  .l-header {
+    height: 70px;
+  }
+}
+.l-header__title {
+  margin: 10px;
+  display: flex;
+  align-items: center;
+}
+@media (min-width: 960px) {
+  .l-header__title {
+    margin: 0 0 0 21px;
+  }
+}
+.l-header__title .c-logo {
+  height: 30px;
+}
+@media (min-width: 960px) {
+  .l-header__title .c-logo {
+    height: 33px;
+  }
+}
+.l-header__title .c-tagline {
+  display: none;
+}
+@media (min-width: 1200px) {
+  .l-header__title .c-tagline {
+    display: block;
+  }
+}
+.l-header__btn {
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+@media (min-width: 960px) {
+  .l-header__btn {
+    display: none;
+  }
+}
+.l-header__btn.active {
+  background-color: #2498b3;
+}
+.l-header__btn.active .p-hamburger > span {
+  background-color: white;
+}
+.l-header__btn.active .p-hamburger > span:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 0px);
+  transform-origin: top right;
+}
+.l-header__btn.active .p-hamburger > span:nth-child(2) {
+  visibility: hidden;
+}
+.l-header__btn.active .p-hamburger > span:nth-child(3) {
+  transform: rotate(-135deg) translate(-13px, 16px);
+  transform-origin: bottom left;
+}
+.l-header__nav {
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  overflow: hidden;
+  visibility: hidden;
+  transition: all 0.5s;
+  max-height: 0;
+}
+@media (min-width: 960px) {
+  .l-header__nav {
+    position: relative;
+    top: 0;
+    width: auto;
+    transform: translateY(0);
+    visibility: visible;
+    overflow: visible;
+    max-height: none;
+  }
+}
+.l-header__nav.active {
+  visibility: visible;
+  max-height: 100vh;
+}
+.l-header__nav__btn__sub {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 47px;
+  z-index: 800;
+}
+@media (min-width: 960px) {
+  .l-header__nav__btn__sub {
+    display: none;
+  }
+}
+.l-header__nav__btn__sub.active {
+  visibility: visible;
+  max-height: 100vh;
+  background-color: #f7f7f7;
+}
+.l-header__nav__btn__sub.active .p-hamburger-sub > span:last-child {
+  transform: translate(0px, 8px) rotate(0);
+  opacity: 0;
+}
+.l-header__nav__sub {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  overflow: hidden;
+  visibility: hidden;
+  transition: all 0.5s;
+  max-height: 0;
+}
+@media (min-width: 960px) {
+  .l-header__nav__sub {
+    position: absolute;
+    width: 100%;
+    top: 70px;
+    left: 0;
+    padding: 10px 20px 10px 0;
+  }
+}
+.l-header__nav__sub.active {
+  width: auto;
+  visibility: visible;
+  max-height: 100vh;
+}
+@media (min-width: 960px) {
+  .l-header__nav__sub.active {
+    background-color: #e9f8fb;
+  }
+}
+
+.l-hero__img {
+  position: relative;
+  width: 100%;
+  height: 163px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../images/bg/bg-hero.jpg");
+}
+@media (min-width: 560px) {
+  .l-hero__img {
+    height: 650px;
+  }
+}
+
+.l-header__title-wrapper {
+  display: block;
+  width: 100%;
+  height: 30px;
+}
+@media (min-width: 960px) {
+  .l-header__title-wrapper {
+    height: 33px;
+  }
+}
+
+.c-btn {
+  display: inline-block;
+  background-color: #2498b3;
+  margin-top: 18px;
+  border-radius: 4px;
+}
+.c-btn a {
+  color: #ffffff;
+  font-size: 1.6rem;
+  vertical-align: baseline;
+}
+
+.c-logo img {
+  height: 100%;
+}
+
+.c-tagline {
+  font-size: 1.4rem;
+  white-space: nowrap;
+}
+.c-tagline strong {
+  font-size: 1.8rem;
+  font-weight: bolder;
+}
+
+.p-nav-global {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+}
+@media (min-width: 960px) {
+  .p-nav-global {
+    flex-direction: row;
+  }
+}
+.p-nav-global__item {
+  position: relative;
+  height: inherit;
+  font-size: 2.6rem;
+  font-weight: bold;
+  white-space: nowrap;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+@media (min-width: 960px) {
+  .p-nav-global__item {
+    padding: 0 10px;
+  }
+}
+.p-nav-global__item--bgblue {
+  display: none;
+  background-color: #2498b3;
+  color: #ffffff;
+}
+@media (min-width: 960px) {
+  .p-nav-global__item--bgblue {
+    display: block;
+  }
+}
+.p-nav-global__item__link {
+  display: block;
+  width: 100%;
+  height: auto;
+  line-height: 1.66;
+  color: inherit;
+  padding: 10px;
+}
+@media (min-width: 960px) {
+  .p-nav-global__item__link {
+    line-height: 4.7;
+    padding: 0;
+  }
+}
+.p-nav-global__item.active {
+  background-color: #d4f1f8;
+}
+
+.p-nav-sub {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+}
+@media (min-width: 960px) {
+  .p-nav-sub {
+    height: auto;
+  }
+}
+.p-nav-sub__item {
+  position: relative;
+  height: inherit;
+  font-size: 2.6rem;
+  font-weight: bold;
+  white-space: nowrap;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+}
+.p-nav-sub__item__link {
+  display: block;
+  width: auto;
+  height: auto;
+  height: 100%;
+  line-height: 1.66;
+  color: inherit;
+  padding: 15px 60px 15px 15px;
+  font-weight: normal;
+}
+.p-nav-sub__item.active {
+  background-color: #d4f1f8;
+}
+
+.p-hamburger {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 23px;
+  height: 23px;
+  cursor: pointer;
+}
+.p-hamburger span {
+  display: block;
+  height: 2px;
+  background-color: #2498b3;
+  margin-bottom: 8px;
+  transition: transform 0.3s;
+}
+.p-hamburger span:last-child {
+  margin-bottom: 0;
+}
+
+.p-hamburger-sub {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 23px;
+  height: 23px;
+  cursor: pointer;
+}
+.p-hamburger-sub > span {
+  display: block;
+  height: 2px;
+  background-color: #131d34;
+  transition: all 0.3s;
+}
+.p-hamburger-sub > span:first-child {
+  transform: translate(0, 10px);
+}
+.p-hamburger-sub > span:last-child {
+  transform: translate(0, 8px) rotate(-90deg);
+}
+
+.u-flex-col {
+  display: flex;
+  flex-direction: column;
+}
+.u-flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.u-ml-16 {
+  margin-left: 1.6rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.bgblue {
+  display: none;
+}
+@media (min-width: 960px) {
+  .bgblue {
+    display: block;
+    background-color: #2498b3;
+    color: #ffffff;
+  }
+}/*# sourceMappingURL=style.css.map */

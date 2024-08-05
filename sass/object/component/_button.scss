@@ -1,0 +1,12 @@
+@use '../../global/forwards' as *;
+.c-btn {
+  display: inline-block;
+  background-color: $c-blue;
+  margin-top: 18px;
+  border-radius: 4px;
+  & a {
+    color: $c-white;
+    font-size: 1.6rem;
+    vertical-align: baseline;
+  }
+}

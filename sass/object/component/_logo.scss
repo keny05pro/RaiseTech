@@ -1,0 +1,15 @@
+@use "../../global/forwards" as *;
+
+.c-logo {
+  & img {
+    height: 100%;
+  }
+}
+.c-tagline {
+  font-size: 1.4rem;
+  white-space: nowrap;
+  & strong {
+    font-size: 1.8rem;
+    font-weight: bolder;
+  }
+}

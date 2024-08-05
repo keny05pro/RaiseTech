@@ -1,0 +1,13 @@
+@use "../global/forwards" as *;
+.l-header {
+  &__title {
+    &-wrapper {
+      display: block;
+      width: 100%;
+      height: 30px;
+      @include bp(pc) {
+        height: 33px;
+      }
+    }
+  }
+}

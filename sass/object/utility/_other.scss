@@ -1,0 +1,10 @@
+@use "../../global/forwards" as *;
+
+.bgblue {
+  display: none;
+  @include bp(pc) {
+    display: block;
+    background-color: $c-blue;
+    color: $c-white;
+  }
+}

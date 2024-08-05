@@ -1,0 +1,47 @@
+@use "../../global/forwards" as *;
+
+.p-hamburger {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 23px;
+  height: 23px;
+  cursor: pointer;
+
+  & span {
+    display: block;
+    height: 2px;
+    background-color: $c-blue;
+    margin-bottom: 8px;
+    transition: transform 0.3s;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.p-hamburger-sub {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 23px;
+  height: 23px;
+  cursor: pointer;
+
+  & > span {
+    display: block;
+    height: 2px;
+    background-color: $c-black;
+    transition: all 0.3s;
+
+    &:first-child {
+      transform: translate(0, 10px);
+    }
+    &:last-child {
+      transform: translate(0, 8px) rotate(-90deg);
+    }
+  }
+}

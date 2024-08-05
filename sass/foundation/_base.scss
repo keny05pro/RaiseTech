@@ -1,0 +1,28 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+body {
+  font-size: 1.6rem;
+  font-family: "Noto Sans JP", MyYuGothicM, YuGothic, -apple-system,
+    BlinkMacSystemFont, "Hiragino kaku Gothic ProN", Meiryo, Verdana, arial,
+    helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
