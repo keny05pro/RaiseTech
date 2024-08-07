@@ -1,10 +1,9 @@
 @use "../../global/forwards" as *;
 
-.bgblue {
+.u-visivle-tablet {
   display: none;
-  @include bp(pc) {
+
+  @include bp(tablet) {
     display: block;
-    background-color: $c-blue;
-    color: $c-white;
   }
 }

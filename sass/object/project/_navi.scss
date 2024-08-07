@@ -12,7 +12,6 @@
   &__item {
     position: relative;
     height: inherit;
-    font-size: 2.6rem;
     font-weight: bold;
     white-space: nowrap;
     background-color: transparent;
@@ -24,6 +23,9 @@
       padding: 0 10px;
     }
 
+    @include bp(l-pc) {
+      padding: 0 15px;
+    }
     &--bgblue {
       display: none;
       background-color: $c-blue;
@@ -43,9 +45,11 @@
       padding: 10px;
 
       @include bp(pc) {
-        line-height: 4.7;
+        line-height: 4.3;
         padding: 0;
+        height: 100%;
       }
+    
     }
     &.active {
       background-color: $c-skyBlue;
@@ -65,7 +69,6 @@
   &__item {
     position: relative;
     height: inherit;
-    font-size: 2.6rem;
     font-weight: bold;
     white-space: nowrap;
     background-color: transparent;
@@ -80,10 +83,6 @@
       color: inherit;
       padding: 15px 60px 15px 15px;
       font-weight: normal;
-
-      // @include bp(pc) {
-      // line-height: 4.7;
-      // }
     }
     &.active {
       background-color: $c-skyBlue;

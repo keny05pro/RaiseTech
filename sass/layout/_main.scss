@@ -1,17 +1,99 @@
 @use "../global/forwards" as *;
 
+article {
+  margin-top: $h-height-sp;
+  @include bp(pc) {
+    margin-top: $h-height-pc;
+  }
+}
 .l-hero {
-  &__img {
+  &__top {
     position: relative;
-    width: 100%;
-    height: 163px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-image: url("../images/bg/bg-hero.jpg");
+    &__img {
+      position: relative;
+      height: 300px;
+      width: 100%;
+      background-image: url("../../images/bg/bg-hero.jpg");
+      position: relative;
+      background-repeat: no-repeat;
+      background-position: center -25px;
+      background-size: cover;
+      padding-bottom: 320px;
+      overflow: hidden;
+      display: flex;
+      justify-content: flex-end;
+      @include bp(tablet) {
+        background-attachment: fixed;
+        height: 650px;
+      }
+    }
+    &__intro {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      max-width: 100%;
+      background-color: $c-white;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 9px 0 13px;
 
-    @include bp(tablet) {
-      height: 650px;
+      @include bp(tablet) {
+        width: 412px;
+        max-width: 530px;
+        top: 37.5%;
+        left: 50%;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+        padding: 43px 40px 19px 40px;
+        justify-content: center;
+        border-radius: 10px;
+
+        & .c-logo {
+          margin-top: 0;
+          margin-bottom: 0.5rem;
+          & img {
+            width: 280px;
+            height: auto;
+          }
+        }
+
+        & button {
+          margin: 1.15em 0 0.5em;
+          font-weight: 700;
+        }
+
+        & p {
+          margin: 1em 0 0.5em;
+          font-weight: 700;
+
+          font-size: 1.6rem;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
+  &__feature {
+    background-color: $c-black;
+    display: flex;
+    z-index: 500;
+    justify-content: center;
+    padding: 4em 0;
+
+    &__cards {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      margin: 0 10px;
+      @include bp(tablet) {
+        justify-content: center;
+        flex-direction: row;
+        margin-top: -263px;
+        max-width: 1078px;
+      }
     }
   }
 }

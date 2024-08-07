@@ -1,18 +1,24 @@
 @mixin bp($point) {
   @if $point== tablet {
-    @media (min-width: 560px) {
+    @media (min-width: 768px) {
       @content;
     }
   }
 
   @if $point==pc {
-    @media (min-width: 960px) {
+    @media (min-width: 1201px) {
       @content;
     }
   }
 
   @if $point==l-pc {
-    @media (min-width: 1200px) {
+    @media (min-width: 1281px) {
+      @content;
+    }
+  }
+
+  @if $point {
+    @media (min-width: $point) {
       @content;
     }
   }

@@ -1,12 +1,16 @@
-@use '../../global/forwards' as *;
+@use "../../global/forwards" as *;
 .c-btn {
   display: inline-block;
   background-color: $c-blue;
-  margin-top: 18px;
   border-radius: 4px;
-  & a {
-    color: $c-white;
-    font-size: 1.6rem;
-    vertical-align: baseline;
+  color: $c-white;
+  padding: 12px 18px;
+  border: none;
+  font-weight: bold;
+  margin: 0.4em 0;
+
+  @include bp(tablet) {
+    padding: 24px 37px;
+    font-size: 1.8rem;
   }
 }
