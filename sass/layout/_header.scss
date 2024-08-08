@@ -95,7 +95,10 @@
     &.active {
       visibility: visible;
       max-height: 100vh;
+      
     }
+
+ 
 
     &__btn__sub {
       position: absolute;
@@ -139,17 +142,31 @@
         width: 100%;
         top: $h-height-pc;
         left: 0;
-        padding: 10px 20px 10px 0;
       }
 
       &.active {
         width: auto;
         visibility: visible;
         max-height: 100vh;
+        
         @include bp(pc) {
           background-color: $c-listBlue;
         }
       }
     }
   }
+}
+
+.p-nav-global__item,
+.p-nav-global__item__link,
+.l-header__nav__btn__sub,
+.l-header__nav__sub {
+  transition: none;
+}
+
+.p-nav-global__item.active,
+.p-nav-global__item__link.active,
+.l-header__nav__btn__sub.active,
+.l-header__nav__sub.active {
+  transition: all 0.8s ease;
 }
