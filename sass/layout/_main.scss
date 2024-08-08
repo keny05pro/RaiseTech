@@ -7,11 +7,13 @@ article {
   }
 }
 
-footer{
+footer {
   height: 1000px;
 }
 .l-hero {
   &__top {
+    position: relative;
+
     &__img {
       position: relative;
       height: 300px;
@@ -24,12 +26,12 @@ footer{
       overflow: hidden;
       display: flex;
       justify-content: flex-end;
+      background-attachment: fixed;
       z-index: -100;
 
       @include bp(tablet) {
         background-size: auto;
         background-position: center center;
-        background-attachment: fixed;
         height: 650px;
       }
     }
@@ -58,7 +60,6 @@ footer{
           background-position: center center;
         }
       }
-     
     }
     &__intro {
       position: absolute;

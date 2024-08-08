@@ -341,6 +341,9 @@ footer {
   height: 1000px;
 }
 
+.l-hero__top {
+  position: relative;
+}
 .l-hero__top__img {
   position: relative;
   height: 300px;
@@ -353,13 +356,13 @@ footer {
   overflow: hidden;
   display: flex;
   justify-content: flex-end;
+  background-attachment: fixed;
   z-index: -100;
 }
 @media (min-width: 768px) {
   .l-hero__top__img {
     background-size: auto;
     background-position: center center;
-    background-attachment: fixed;
     height: 650px;
   }
 }
@@ -367,7 +370,6 @@ footer {
   .l-hero__top__img {
     background-size: auto;
     background-position: center center;
-    background-attachment: fixed;
     height: 650px;
   }
 }
