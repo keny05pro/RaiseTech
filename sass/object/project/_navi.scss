@@ -50,9 +50,8 @@
         padding: 0;
         height: 100%;
       }
-    
     }
-    &.active {
+    &:not(:last-child).active {
       background-color: $c-skyBlue;
     }
   }
@@ -88,11 +87,9 @@
       background-color: $c-skyBlue;
     }
 
-    
-    &:hover{
+    &:hover {
       background-color: $c-white;
       color: $c-blue;
     }
-
   }
 }

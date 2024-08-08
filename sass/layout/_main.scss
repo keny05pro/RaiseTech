@@ -6,9 +6,12 @@ article {
     margin-top: $h-height-pc;
   }
 }
+
+footer{
+  height: 1000px;
+}
 .l-hero {
   &__top {
-    transform: translate3d(0px, 0px, 0px);
     &__img {
       position: relative;
       height: 300px;

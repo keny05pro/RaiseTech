@@ -353,8 +353,8 @@ article {
     margin-top: 70px;
   }
 }
-.l-hero__top {
-  transform: translate3d(0px, 0px, 0px);
+footer {
+  height: 1000px;
 }
 
 .l-hero__top__img {
@@ -761,7 +761,7 @@ article {
     height: 100%;
   }
 }
-.p-nav-global__item.active {
+.p-nav-global__item:not(:last-child).active {
   background-color: #d4f1f8;
 }
 
