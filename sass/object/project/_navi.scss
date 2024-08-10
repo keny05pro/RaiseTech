@@ -19,19 +19,28 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-
+    transition: all 0.5s;
     @include bp(pc) {
-      padding: 0 10px;
+      & .p-nav-global__item__link {
+        padding: 0 10px;
+        &:hover {
+          @include bp(pc) {
+            background-color: $c-skyBlue;
+          }
+        }
+      }
     }
 
     @include bp(l-pc) {
-      padding: 0 15px;
+      & .p-nav-global__item__link {
+        padding: 0 15px;
+      }
     }
     &--bgblue {
       display: none;
       background-color: $c-blue;
       color: $c-white;
-
+      pointer-events: none;
       @include bp(pc) {
         display: block;
       }
@@ -41,18 +50,59 @@
       display: block;
       width: 100%;
       height: auto;
-      line-height: 1.66;
+      line-height: 2.8;
       color: inherit;
-      padding: 10px;
-
+      padding: 0 0 0 10px;
+      display: flex;
+      transition: all 0.5s ease;
+      width: auto;
       @include bp(pc) {
         line-height: 4.3;
         padding: 0;
         height: 100%;
       }
     }
+
+    & .p-nav-sub {
+      @include bp(pc) {
+        position: absolute;
+        top: $h-height-pc;
+      }
+      overflow: hidden;
+      visibility: hidden;
+      max-height: 0;
+    
+    }
+    &:hover {
+      & .p-hamburger-sub {
+        background-color: $c-gray;
+
+        & .p-hamburger-bar {
+          & > span {
+            &:last-child {
+              display: none;
+            }
+          }
+        }
+      }
+
+      & .p-nav-sub {
+        width: auto;
+        visibility: visible;
+        max-height: 100vh;
+      }
+    }
     &:not(:last-child).active {
       background-color: $c-skyBlue;
+    }
+  }
+
+  & li {
+    & a:hover {
+      background-color: #f3fafb;
+      @include bp(pc) {
+        background-color: $c-white;
+      }
     }
   }
 }
@@ -61,6 +111,7 @@
   display: flex;
   width: 100%;
   height: 100%;
+  transition: all 0.5s;
   flex-direction: column;
   @include bp(pc) {
     height: auto;
@@ -71,25 +122,28 @@
     height: inherit;
     font-weight: bold;
     white-space: nowrap;
-    background-color: transparent;
     display: flex;
     justify-content: space-between;
+    background-color: $c-white;
+    transition: all 0.5s;
+    @include bp(pc) {
+      background-color: #f3fafb;
+    }
     &__link {
       display: block;
+      position: relative;
       width: 100%;
       height: 100%;
       line-height: 1.66;
       color: inherit;
       padding: 15px 60px 15px 15px;
       font-weight: normal;
-    }
-    &.active {
-      background-color: $c-skyBlue;
-    }
-
-    &:hover {
-      background-color: $c-white;
-      color: $c-blue;
+      &:hover {
+        @include bp(pc) {
+          background-color: $c-white;
+          color: #2498b3;
+        }
+      }
     }
   }
 }

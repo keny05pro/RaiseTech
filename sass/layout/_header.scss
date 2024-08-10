@@ -95,64 +95,6 @@
     &.active {
       visibility: visible;
       max-height: 100vh;
-      
-    }
-
- 
-
-    &__btn__sub {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 50px;
-      height: 47px;
-      z-index: 800;
-      @include bp(pc) {
-        display: none;
-      }
-
-      &.active {
-        visibility: visible;
-        max-height: 100vh;
-        background-color: $c-gray;
-        & .p-hamburger-sub {
-          & > span {
-            &:last-child {
-              transform: translate(0px, 8px) rotate(0);
-              opacity: 0;
-            }
-          }
-        }
-      }
-    }
-
-    &__sub {
-      position: relative;
-      width: 100%;
-      height: auto;
-      display: flex;
-      align-items: center;
-      background-color: $c-white;
-      overflow: hidden;
-      visibility: hidden;
-      transition: all 0.5s;
-      max-height: 0;
-      @include bp(pc) {
-        position: absolute;
-        width: 100%;
-        top: $h-height-pc;
-        left: 0;
-      }
-
-      &.active {
-        width: auto;
-        visibility: visible;
-        max-height: 100vh;
-        
-        @include bp(pc) {
-          background-color: $c-listBlue;
-        }
-      }
     }
   }
 }
