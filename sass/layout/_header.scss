@@ -79,7 +79,6 @@
     background-color: $c-white;
     overflow: hidden;
     visibility: hidden;
-    transition: all 0.5s;
     max-height: 0;
 
     @include bp(pc) {
@@ -99,16 +98,4 @@
   }
 }
 
-.p-nav-global__item,
-.p-nav-global__item__link,
-.l-header__nav__btn__sub,
-.l-header__nav__sub {
-  transition: none;
-}
 
-.p-nav-global__item.active,
-.p-nav-global__item__link.active,
-.l-header__nav__btn__sub.active,
-.l-header__nav__sub.active {
-  transition: all 0.8s ease;
-}

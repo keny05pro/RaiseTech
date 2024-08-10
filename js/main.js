@@ -7,8 +7,9 @@ hamburgerBtn.addEventListener("click", () => {
 });
 
 window.addEventListener("resize", () => {
-  if (window.innerWidth >= 1201) {
+  if (window.innerWidth >= 1200) {
     hamburgerBtn.classList.remove("active");
     gNav.classList.remove("active");
   }
 });
+
